@@ -6,7 +6,7 @@ const Showcase = () => {
       <div className="container rel">
         <div className="show__content">
           <h1>Welcome to the </h1>
-          <h1>SPECKYFOX.</h1>
+          <h1>Dodo Island.</h1>
         </div>
 
         <div className="show__card">
