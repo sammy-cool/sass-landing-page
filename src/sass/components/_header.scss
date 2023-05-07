@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  height: 75vh;
+  height: 100dvh;
   @include bgImage("/images/1.jpg");
   background-color: rgba(0, 0, 0, 0.6);
   @include flexCenter;
