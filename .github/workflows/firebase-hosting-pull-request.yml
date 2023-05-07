@@ -10,10 +10,30 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run deployment script
+      - name: Check if node_modules directory exists
         run: |
-          chmod +x deployment.sh
-          ./deployment.sh
+          if [ -d "node_modules" ]; then
+            echo "Deleting node_modules directory..."
+            rm -rf node_modules
+          else
+            echo "node_modules directory not found. Proceeding further..."
+          fi
+
+      - name: Set Node.js version
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.18.3  # Specify the desired Node.js version
+      - name: Check Node.js version
+        run: node --version
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Firebase Project
+        run: npm run build  # Or the appropriate build command for your project
+
+      - name: Check Node.js version
+        run: node --version
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
