@@ -9,7 +9,7 @@ else
 fi
 
 # Install specific Node.js version
-NODE_VERSION=14.18.3  # Specify the desired Node.js version
+NODE_VERSION=16.13.0  # Specify the desired Node.js version
 echo "Installing Node.js version $NODE_VERSION..."
 nvm install $NODE_VERSION
 nvm use $NODE_VERSION
