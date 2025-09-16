@@ -28,13 +28,13 @@ const Header = () => {
       warning: 'This is a warning message!',
     });
     createToast({
-      // message: 'This is a success toast notification!',
+      message: 'This is a success toast notification!',
       duration: 3000,
-      // animationDuration: "5s",
-      // animationEasing: "ease-in-out",
+      animationDuration: ".5s",
+      animationEasing: "ease-in-out",
       position: 'top-left',
       type: 'info', // info, success, error, or warning
-      // backgroundColor: 'green', // Custom background color
+      backgroundColor: 'green', // Custom background color
       textColor: 'white', // Custom text color
       showCloseButton: true
     });
