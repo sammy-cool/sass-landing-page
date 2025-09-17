@@ -1,6 +1,6 @@
 import React from "react";
 // import useToast from "./useToast.jsx";
-import { createToast, setDefaultColors, setDefaultMessages } from "customizable-toast-notification";
+import { noop, createToast, setDefaultColors, setDefaultMessages } from "customizable-toast-notification";
 
 const Header = () => {
   // const showToast1 = useToast();
@@ -29,20 +29,43 @@ const Header = () => {
     });
     createToast({
       message: 'This is a success toast notification!',
-      duration: 3000,
-      animationDuration: ".5s",
+      duration: 5000,
+      animationDuration: "2.5s",
       animationEasing: "ease-in-out",
       position: 'top-left',
       type: 'info', // info, success, error, or warning
       backgroundColor: 'green', // Custom background color
       textColor: 'white', // Custom text color
       showCloseButton: true,
-      autoClose: false,
+      // autoClose: false,
       cta: {
         label: "Download",
         href: "/",
         variant: "link",
         target: "_blank"
+      }
+    });
+    createToast({
+      message: "File uploaded successfully!",
+      type: "success",
+      cta: {
+        label: "View File",
+        onClick: () => {
+          window.open('/files/latest');
+        },
+        autoClose: true // Close toast after click (default: true)
+      }
+    });
+    createToast({
+      message: "Ready to sync your data?",
+      cta: {
+        label: "Sync Now",
+        ariaLabel: "Start data synchronization",
+        autoClose: false,
+        onClick: async () => {
+          noop();
+          // Manually close if needed
+        }
       }
     });
   };
@@ -53,9 +76,6 @@ const Header = () => {
         <h1 className="header__content-h1">{state.heading}</h1>
         <div className="header__content-links">
           <a href="/">{state.link1}</a>
-          {/* <button onClick={() => showToast1({ message: "Success!", type: yell })}>
-        Show Toast1
-      </button> */}
           <span className="header__content-span"></span>
           <a href="/">{state.link2}</a>
           <button onClick={showToast}>Show Toast</button>
