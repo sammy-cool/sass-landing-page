@@ -1,6 +1,7 @@
 import React from "react";
 // import useToast from "./useToast.jsx";
 import { createToast, setDefaultColors, setDefaultMessages } from "customizable-toast-notification";
+import { noop } from "customizable-toast-notification";
 
 const Header = () => {
   // const showToast1 = useToast();
@@ -12,8 +13,8 @@ const Header = () => {
 
   // let yell = gg || 'warning';
   // var gg = '';
-   // Function to trigger the toast
-   const showToast = () => {
+  // Function to trigger the toast
+  const showToast = () => {
     // gg = 'error';
     setDefaultColors({
       info: 'black',
@@ -36,10 +37,17 @@ const Header = () => {
       type: 'info', // info, success, error, or warning
       backgroundColor: 'green', // Custom background color
       textColor: 'white', // Custom text color
-      showCloseButton: true
+      showCloseButton: true,
+      autoClose: false,
+      cta: {
+        label: "Download",
+        href: "/",
+        variant: "link",
+        target: "_blank"
+      }
     });
   };
-  
+
   return (
     <div className="header">
       <div className="header__content">
