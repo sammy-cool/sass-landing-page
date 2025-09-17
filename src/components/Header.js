@@ -1,7 +1,6 @@
 import React from "react";
 // import useToast from "./useToast.jsx";
 import { createToast, setDefaultColors, setDefaultMessages } from "customizable-toast-notification";
-import { noop } from "customizable-toast-notification";
 
 const Header = () => {
   // const showToast1 = useToast();
