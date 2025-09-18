@@ -35,8 +35,8 @@ const Header = () => {
       animationEasing: "ease-in-out",
       position: 'top-left',
       type: 'warning', // info, success, error, or warning
-      backgroundColor: 'green', // Custom background color
-      textColor: 'white', // Custom text color
+      // backgroundColor: 'green', // Custom background color
+      // textColor: 'white', // Custom text color
       showCloseButton: true,
       // autoClose: false,
       cta: {
