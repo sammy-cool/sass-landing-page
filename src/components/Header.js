@@ -1,6 +1,7 @@
 import React from "react";
 // import useToast from "./useToast.jsx";
-import { noop, createToast, setDefaultColors, setDefaultMessages } from "customizable-toast-notification";
+// import { noop, createToast, setDefaultColors, setDefaultMessages } from "customizable-toast-notification/dist/index.esm.mjs";
+const {createToast, setDefaultMessages, setDefaultColors, noop} = require("customizable-toast-notification");
 
 const Header = () => {
   // const showToast1 = useToast();
@@ -16,10 +17,10 @@ const Header = () => {
   const showToast = () => {
     // gg = 'error';
     setDefaultColors({
-      info: 'black',
-      success: 'green',
+      info: 'teal',
+      success: 'orange',
       error: 'red',
-      warning: 'green',
+      warning: 'snow',
     });
     setDefaultMessages({
       info: 'This is an informational message!',
@@ -33,14 +34,14 @@ const Header = () => {
       animationDuration: "2.5s",
       animationEasing: "ease-in-out",
       position: 'top-left',
-      type: 'info', // info, success, error, or warning
+      type: 'warning', // info, success, error, or warning
       backgroundColor: 'green', // Custom background color
       textColor: 'white', // Custom text color
       showCloseButton: true,
       // autoClose: false,
       cta: {
         label: "Download",
-        href: "/",
+        href: "https://cdn.jsdelivr.net/npm/customizable-toast-notification",
         variant: "link",
         target: "_blank"
       }
@@ -51,13 +52,14 @@ const Header = () => {
       cta: {
         label: "View File",
         onClick: () => {
-          window.open('/files/latest');
+          window.open('https://cdn.jsdelivr.net/npm/customizable-toast-notification');
         },
         autoClose: true // Close toast after click (default: true)
       }
     });
     createToast({
       message: "Ready to sync your data?",
+      duration: 50000,
       cta: {
         label: "Sync Now",
         ariaLabel: "Start data synchronization",
