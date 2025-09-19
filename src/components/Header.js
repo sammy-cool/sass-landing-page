@@ -20,7 +20,7 @@ const Header = () => {
       info: 'teal',
       success: 'orange',
       error: 'red',
-      warning: 'snow',
+      warning: 'black',
     });
     setDefaultMessages({
       info: 'This is an informational message!',
@@ -33,13 +33,13 @@ const Header = () => {
       duration: 5000,
       animationDuration: "2.5s",
       animationEasing: "ease-in-out",
-      position: 'top-left',
+      position: 'top-full-width',
       type: 'warning', // info, success, error, or warning
       // backgroundColor: 'green', // Custom background color
       // textColor: 'white', // Custom text color
       showCloseButton: true,
-      // autoClose: false,
       cta: {
+        autoClose: false, //toast close nhi hota by default close hoga instant nhi true case instant all toast closes 
         label: "Download",
         href: "https://cdn.jsdelivr.net/npm/customizable-toast-notification",
         variant: "link",
@@ -54,7 +54,7 @@ const Header = () => {
         onClick: () => {
           window.open('https://cdn.jsdelivr.net/npm/customizable-toast-notification');
         },
-        autoClose: true // Close toast after click (default: true)
+        autoClose: false // Close toast after click (default: true)
       }
     });
     createToast({
