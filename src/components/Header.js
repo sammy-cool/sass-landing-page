@@ -55,6 +55,7 @@ const Header = () => {
           window.open('https://cdn.jsdelivr.net/npm/customizable-toast-notification');
         },
         autoClose: false // Close toast after click (default: true)
+
       }
     });
     createToast({
